@@ -15,24 +15,26 @@
 
         <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
 
-        <link rel = "stylesheet" type = "text/css" href = "format.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "css/contactStyle.css"/>
     </head>
     <body>
-        <h1>Contact Bret Jones</h1>
-        <p>1234 GoDawgs Lane<br>Athens, GA 30602</p>
-        <p>(770) 867-5309</p>
-        <hr>
-        <form action="mailto:bcj33435@uga.edu" method="post">
-            <label for="name">Name:</label>
-            <input type="text" name="name">
-            <br>
-            <label for="email">Email:</label>
-            <input type="email" name="email">
-            <br>
-            <textarea rows="5" cols="50" type="message"></textarea>
-            <br>
-            <input type="submit">
-        </form>
+        <div class="column">
+            <h1>Contact Bret</h1>
+            <p>Reach out to me if you have any questions or would like to start a serious conversation.</p>
+            <p>1234 GoDawgs Lane<br>Athens, GA 30602</p>
+            <p>(770) 867-5309</p>
+        </div>
+        <div class="column">
+            <form action="mailto:bcj33435@uga.edu" method="post">
+                <b>Name</b>
+                <input type="text" name="name" required placeholder="John Doe">
+                <b>Email</b>
+                <input type="email" name="email" required placeholder="johndoe@email.com">
+                <b>Message</b>
+                <textarea rows="5" type="message" required placeholder="Message"></textarea>
+                <input class="submit" type="submit">
+            </form>
+        </div>
     </body>
     <footer>
     </footer>

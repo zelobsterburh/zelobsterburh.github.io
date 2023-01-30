@@ -20,13 +20,15 @@ function triggerAlerts() {
         }
     }, 10000);
 }
+
 function jumpScare() {
     document.getElementById("jump").style.display = "block";
     setTimeout(function() {
         document.getElementById("jump").style.display = "none";
     }, 500);
 }
+
 function triggerShenanigans() {
     jumpScare();
-    //triggerAlerts();
+    triggerAlerts();
 }

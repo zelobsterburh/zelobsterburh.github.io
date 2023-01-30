@@ -18,6 +18,37 @@ function justAnnoy() {
         console.log(result);
     });
 }
+
+var userx;
+var usery;
+window.addEventListener("mousemove", function(event) {
+    userx = (event.clientX) + "px";
+    usery = (event.clientY + window.scrollY) + "px";
+});
+function doTrail() {
+    setInterval(function() {
+        var tail = document.createElement("div");
+        tail.classList.add("trail");
+        tail.style.left = userx;
+        tail.style.top = usery;
+        var base = document.getElementById("trail");
+        base.appendChild(tail);
+        if (base.childNodes.length > 50) {
+            base.removeChild(base.firstChild);
+        }
+    }, 10);
+}
+
+function shuffleLetters() {
+    setInterval(function() {
+        var mess = "Just a note for you: Not everything should be centered sometimes. Many modern sites make better use of left-aligned content.";
+        var evilchar = "!@#$%^*?";
+        var base = document.getElementById("anger");
+        var pos = Math.floor(mess.length*Math.random());
+        base.innerHTML = mess.substring(0, pos) + evilchar[pos % evilchar.length] + mess.substring(pos + 1);
+    }, 10);
+}
+
 function start() {
     // Greeting
     var base = document.getElementsByClassName("greeting")[0];
@@ -43,7 +74,6 @@ function start() {
     }
     justAnnoy();
     // Stare at them
-    // Head to EMPLOYER location
     var video = document.querySelector("#videoElement");
     navigator.geolocation.getCurrentPosition(showPosition);
     if (navigator.mediaDevices.getUserMedia) {
@@ -58,19 +88,9 @@ function start() {
     Notification.requestPermission().then((result) => {
         console.log(result);
     });
+
+    doTrail();
+
+    shuffleLetters();
 }
 start();
-var trail = [];
-document.body.addEventListener("mousemove", function(event) {
-    //console.log(event);
-    var tail = document.createElement("div");
-    trail.push(tail);
-    tail.classList.add("trail");
-    tail.style.left = (event.clientX) + "px";
-    tail.style.top = (event.clientY + window.scrollY) + "px";
-    document.getElementById("trail").appendChild(tail);
-    setTimeout(function() {
-        document.getElementById("trail").removeChild(trail[0]);
-        trail.splice(0, 1);
-    }, 500);
-});

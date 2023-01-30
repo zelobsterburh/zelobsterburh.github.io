@@ -16,15 +16,17 @@
         <link href='https://fonts.googleapis.com/css?family=Barrio' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Henny Penny' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=BenchNine' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Margarine' rel='stylesheet'>
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
         crossorigin=""/>
 
-        <link rel = "stylesheet" type = "text/css" href = "format.css"/>
+        <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
     </head>
     <body>
         <div class="header">
+            <img class="topOfPage" src="https://s.brightspace.com/course-images/images/999d04c2-a4e4-4074-8e15-ccda3b73f959/banner-wide-high-density-min-size.jpg">
             <h1>Bret Jones</h1>
             <h2>I code things. Check out <a href="https://juggling.uga.edu">my website</a> that I made for the juggling club.</h2>
             <h2 class="greeting">Default</h2>
@@ -36,73 +38,134 @@
                 <img src="images/profile.jpg" alt="This is a picture of me and it is clearly a headshot please don't hurt me for this of all things">
                 <div id="memap" class="map"></div>
             </div>
-            <div class="details">
-                <div class="twolist">
-                    <div class="column">
-                        <h3>My Languages</h3>
-                        <ul>
-                            <li>Java</li>
-                            <li>Javascript</li>
-                            <li>Python</li>
-                            <li>C</li>
-                            <li>C++</li>
-                            <li>C#</li>
-                            <li>HTML/CSS</li>
-                            <li>TI Basic (the best one)</li>
-                        </ul>
-                    </div>
-                    <div class="column">
-                        <h3>Other Skills</h3>
-                        <ul>
-                            <li>Tracking you</li>
-                            <li>Following you</li>
-                            <li>Running fast</li>
-                            <li>Hunting</li>
-                            <li>Night Vision</li>
-                            <li>Heat Vision</li>
-                            <li>I smell like lavender</li>
-                        </ul>
-                    </div>
-                </div>
-                <hr style="border-top: 1px dotted blue">
-                <h3>Leadership and Experience</h3>
-                <dl>
-                    <dt>2022-2023</dt>
-                    <dd><a href="https://juggling.uga.edu">Juggling Club VP</a></dd>
-                    <dt>2024-2060</dt>
-                    <dd>CEO of Google</dd>
-                </dl>
-                <hr style="border-top: 1px dashed blue">
-                <h3>Skills</h3>
-                <dl>
-                    <dt>Unicycling</dt>
-                    <dd>&#11088 &#11088 &#11088 &#11088 &#11088</dd>
-                    <dt>Juggling</dt>
-                    <dd>&#11088 &#11088 &#11088 &#11088 &#11088</dd>
-                    <dt>Counting to 5</dt>
-                    <dd>&#11088 &#11088 &#11088 &#11088 &#11088 &#11088 &#11088 &#11088</dd>
-                </dl>
-            </div>
             <div class="card">
                 <video autoplay="true" id="videoElement" style="height: 300px"></video>
                 <div id="usrmap" class="map"></div>
             </div>
         </div>
+        <hr style="border-top: 1px dotted blue">
+        <div class="details">
+            <div class="list">
+                <h3>Languages</h3>
+                <img src="https://education.ti.com/-/media/ti/education/images/products/product-details/graphing/84-plus/product-key-ti-84-plus.png?rev=6da85768-662c-411b-914d-89ab00e1dc99&h=561&w=250&la=en&hash=598B1553316C05C8737A8CF81023ECCC4DEF50E6">
+                <ul class="listedList">
+                    <li>Java</li>
+                    <li>Javascript</li>
+                    <li>Python</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>C#</li>
+                    <li>HTML/CSS</li>
+                    <li>TI Basic (the best one)</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            <div class="list">
+                <h3>Leadership and Experience</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png">
+                <table class="listedList">
+                    <tr>
+                        <td>2022-2023</td>
+                        <td><a href="https://juggling.uga.edu">Juggling Club VP</a></td>
+                    </tr>
+                    <tr>
+                        <td>2024-2060</td>
+                        <td>CEO of Google</td>
+                    </tr>
+                    <tr>
+                        <td>2060-2062</td>
+                        <td>Senator of New Hampshire</td>
+                    </tr>
+                    <tr>
+                        <td>2062-2063</td>
+                        <td>President</td>
+                    </tr>
+                    <tr>
+                        <td>2063-2071</td>
+                        <td>Dictator</td>
+                    </tr>
+                    <tr>
+                        <td>2071-2090</td>
+                        <td>Miner</td>
+                    </tr>
+                    <tr>
+                        <td>2090-2113</td>
+                        <td>Frag Runner</td>
+                    </tr>
+                    <tr>
+                        <td>2113-2341</td>
+                        <td>CyberQuadrillionare</td>
+                    </tr>
+                    <tr>
+                        <td>2341-2341</td>
+                        <td>Retired Cop</td>
+                    </tr>
+                    <tr>
+                        <td>2341-2341</td>
+                        <td>One last jon. (They pulled me out of retirement)</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="list">
+                <h3>Other Skills</h3>
+                <img src="images/me.jpg">
+                <table class="listedList">
+                    <tr>
+                        <td>Unicycling</td>
+                        <td>&#11088&#11088&#11088&#11088&#11088</td>
+                    </tr>
+                    <tr>
+                        <td>Not Repeating Myself</td>
+                        <td>&#11088&#11088</td>
+                    </tr>
+                    <tr>
+                        <td>Juggling</td>
+                        <td>&#11088&#11088&#11088&#11088&#11088</td>
+                    </tr>
+                    <tr>
+                        <td>Counting to Five</td>
+                        <td>&#11088&#11088&#11088&#11088&#11088&#11088&#11088</td>
+                    </tr>
+                    <tr>
+                        <td>Smelling Like Lavender</td>
+                        <td>&#11088&#11088&#11088&#11088&#11088</td>
+                    </tr>
+                    <tr>
+                        <td>Heat Vision</td>
+                        <td>&#11088&#11088&#11088&#11088&#11088</td>
+                    </tr>
+                    <tr>
+                        <td>Not Repeating Myself</td>
+                        <td>&#11088&#11088</td>
+                    </tr>
+                    <tr>
+                        <td>Funny</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Blast Resistence</td>
+                        <td>&#11088&#11088&#11088&#11088</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr style="border-top: 1px dashed blue">
         <div class="required">
             <p>Welcome to my monster of a website. I hope you enjoy it. It isn't the same if you don't accept everything.</p>
             <p>Feel free to click on all the links. Here are some you should actually check out. Like, they are actually decent websites.</p>
             <ul>
                 <li><a href="https://iceman013.github.io/startup/">Startup page</a></li>
                 <li><a href="https://juggling.uga.edu">Juggling club page</a></li>
+                <li><a href="ad.html">FREE MONEY</a></li>
             </ul>
             <p style="color: rebeccapurple">But hey. I gotta change some text color so I'll do that here.</p>
             <p class="showoff">Is this fancy enough for you?</p>
+            <p id="anger" style="font-family: 'Lucida Console'"></p>
         </div>
+        <hr style="border-top: 1px dashed blue">
         <div class="footer">
-            <button onclick="open(contact.html)">Get in Touch</button>
-            <h3><a href="contact.html">Get in Touch</a></h3>
-            <hr>
-            <p>&#169 Bret Jones even though this isn't copyrighted and thus makes no sense legally.</p>
+            <button onclick="window.open('contact.html')">Get in Touch</button>
+            <p>&#169 Bret Jones even though this symbol is implied in copyright law and is thus pointless</p>
         </div>
         <div class="other">
             <div id = "trail"></div>
@@ -111,8 +174,8 @@
     </body>
     <footer>
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-        <script src = "shenan.js" type = "text/javascript"></script>
-        <script src = "map.js" type = "text/javascript"></script>
-        <script src = "main.js" type = "text/javascript"></script>
+        <script src = "js/shenan.js" type = "text/javascript"></script>
+        <script src = "js/map.js" type = "text/javascript"></script>
+        <script src = "js/main.js" type = "text/javascript"></script>
     </footer>
 </html>

@@ -3,11 +3,13 @@
 }
 @keyframes rainbowIsCool {
     0% { backdrop-filter: hue-rotate(0deg); }
+    25% { backdrop-filter: hue-rotate(90deg); }
     50% { backdrop-filter: hue-rotate(180deg); }
+    75% { backdrop-filter: hue-rotate(270deg); }
     100% { backdrop-filter: hue-rotate(360deg); }
 }
 body {
-    font-family: "Barrio";
+    font-family: "Margarine";
     margin: 0px;
     padding: 10px;
     background-color: #a0ffff;
@@ -25,7 +27,9 @@ body {
 }
 @keyframes howdy {
     0% { filter: hue-rotate(0deg); }
+    25% { filter: hue-rotate(90deg); }
     50% { filter: hue-rotate(180deg); }
+    75% { filter: hue-rotate(270deg); }
     100% { filter: hue-rotate(360deg); }
 }
 @keyframes hooray {
@@ -35,11 +39,24 @@ body {
     75% { transform: rotate(-3deg) }
 }
 .header {
+    font-family: "Barrio";
     text-align: center;
+    height: 250px;
+    color: white;
+}
+.topOfPage {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    position: absolute;
+    z-index: -3;
+    height: 250px;
+    filter: blur(2px) brightness(50%);
+    box-shadow: 1px 1px rgba(0,0,0,0.5);
 }
 .greeting {
     font-family: "Henny Penny";
-    color: red;
+    color: #ff8000;
     animation: howdy 3s infinite, hooray 0.2s infinite;
 }
 .trail {
@@ -51,19 +68,28 @@ body {
     height: 10px;
     border-radius: 5px;
     z-index: -1;
+    user-select: none;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 10px;
+    margin-bottom: 20px;
 }
 .card {
-    z-index: -2;
+    z-index: 1;
+    transition: 0.2s;
     margin-left: auto;
     margin-right: auto;
 
     width: 500px;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
+}
+.card:hover {
+    transition: 0.2s;
+    transform: translate(-5px, -10px);
+    box-shadow: 5px 10px 20px rgba(0,0,0,0.5);
 }
 .card img, .card video {
     float: left;
@@ -78,10 +104,25 @@ body {
 
 .details {
     font-family: "BenchNine";
-}
-.twolist {
+    font-size: large;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+.list {
+    padding: 10px;
+    padding-top: 0px;
+}
+.list h3 {
+    text-align: center;
+}
+.list img {
+    float: left;
+    width: 100px;
+    margin-right: 10px;
+}
+.listedList {
+    float: left;
 }
 
 .scare {
@@ -110,4 +151,13 @@ a:hover {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+}
+
+.footer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: black;
+    text-align: center;
+    color: white;
 }

@@ -1,5 +1,5 @@
 var mycoords = [33.7488, -84.3877];
-const jumps = 2000;
+const jumps = 500;
 function makeMap(usercoords) {
     // User location
     var usrcoords = [usercoords.latitude, usercoords.longitude];
@@ -10,7 +10,7 @@ function makeMap(usercoords) {
     }).addTo(map);
 
     var marker = new L.Marker([usercoords.latitude, usercoords.longitude]);
-    marker.bindPopup("This is your location.");
+    marker.bindPopup("Your current location").openPopup();
     marker.addTo(map);
 
     // My location
@@ -50,14 +50,16 @@ function makeMap(usercoords) {
         }
         meloc.setLatLng(tcoords).update();
         melocb.setLatLng(tcoords).update();
+        marker.openPopup();
+        meloc.openPopup();
         mymap.setView(tcoords, 10);
 
         jdone++;
         if (jdone <= jumps) {
-            setTimeout(moveMe, 5);
+            setTimeout(moveMe, 1);
         } else {
             triggerShenanigans();
         }
     }
-    setTimeout(moveMe(), 1000);
+    setTimeout(moveMe(), 100);
 }
