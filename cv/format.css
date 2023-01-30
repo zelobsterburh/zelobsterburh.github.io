@@ -12,6 +12,7 @@ body {
     padding: 10px;
     background-color: #a0ffff;
     animation: rainbowIsCool 5s infinite;
+    overflow-x: hidden;
 }
 ::-webkit-scrollbar {
     width: 50px;
@@ -33,10 +34,12 @@ body {
     50% { transform: rotate(0) }
     75% { transform: rotate(-3deg) }
 }
+.header {
+    text-align: center;
+}
 .greeting {
     font-family: "Henny Penny";
     color: red;
-    width: fit-content;
     animation: howdy 3s infinite, hooray 0.2s infinite;
 }
 .trail {
@@ -48,4 +51,63 @@ body {
     height: 10px;
     border-radius: 5px;
     z-index: -1;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+.card {
+    z-index: -2;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 500px;
+}
+.card img, .card video {
+    float: left;
+    object-fit: cover;
+    height: 300px;
+    width: 500px;
+}
+.map {
+    width: 100%;
+    height: 300px;
+}
+
+.details {
+    font-family: "BenchNine";
+}
+.twolist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.scare {
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    top: 0px;
+    left: 0px;
+    border: 1px solid red;
+}
+
+a {
+    color: #ffbb00;
+    text-decoration: none;
+}
+a:hover {
+    filter: invert(1);
+}
+
+.showoff {
+    font-size: 30px;
+    width: fit-content;
+    background: linear-gradient(0.25turn, red, orange, yellow, green, blue, indigo, violet);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }

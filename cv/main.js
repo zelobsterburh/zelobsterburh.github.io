@@ -39,7 +39,7 @@ function start() {
         } else {
             output += (-1*location.coords.longitude) + "°" + "W";
         }
-        alert("Hi. Your coordinates are " + output + ". I am currently heading to your location POTENTIAL EMPLOYER.");
+        makeMap(location.coords);
     }
     justAnnoy();
     // Stare at them
@@ -58,10 +58,6 @@ function start() {
     Notification.requestPermission().then((result) => {
         console.log(result);
     });
-
-    setInterval(function() {
-        alert("Are you still there?");
-    }, 10000);
 }
 start();
 var trail = [];

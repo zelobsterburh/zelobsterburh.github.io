@@ -15,54 +15,104 @@
 
         <link href='https://fonts.googleapis.com/css?family=Barrio' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Henny Penny' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=BenchNine' rel='stylesheet'>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+        crossorigin=""/>
 
         <link rel = "stylesheet" type = "text/css" href = "format.css"/>
     </head>
     <body>
-        <h1>Bret Jones</h1>
-        <h2>I code things. Check out <a href="https://juggling.uga.edu">my website</a> that I made for the juggling club.</h2>
-        <img src="images/profile.jpg" style="width: 100px" alt="This is a picture of me and it is clearly a headshot please don't hurt me for this of all things">
-        <h2 class="greeting">Default</h2>
-        <p>I already make websites. I also do circus stuff. Check out <a href="https://juggling.uga.edu">this website</a> and give me feedback please.
-        I would appreciate it. Thanks.</p>
-        <video autoplay="true" id="videoElement" style="height: 300px"></video>
-        <hr>
-        <h2>My Skills</h2>
-        <h3>My Languages</h3>
-        <ul>
-            <li>Java</li>
-            <li>Javascript</li>
-            <li>Python</li>
-            <li>C</li>
-            <li>C++</li>
-            <li>C#</li>
-            <li>HTML/CSS</li>
-            <li>TI Basic (this is the best one)</li>
-        </ul>
-        <hr>
-        <h3>Leadership and Experience</h3>
-        <dl>
-            <dt>2022-2023</dt>
-            <dd><a href="https://juggling.uga.edu">Juggling Club VP</a></dd>
-            <dt>2024-2060</dt>
-            <dd>CEO of Google</dd>
-        </dl>
-        <hr>
-        <h3>Skills</h3>
-        <dl>
-            <dt>Unicycling</dt>
-            <dd>&#11088 &#11088 &#11088 &#11088 &#11088</dd>
-            <dt>Juggling</dt>
-            <dd>&#11088 &#11088 &#11088 &#11088 &#11088</dd>
-            <dt>Counting to 5</dt>
-            <dd>&#11088 &#11088 &#11088 &#11088 &#11088 &#11088 &#11088 &#11088</dd>
-        </dl>
-        <h3><a href="contact.html">Get in Touch</a></h3>
-        <hr>
-        <p>&#169 Bret Jones even though this isn't copyrighted and thus makes no sense legally.</p>
-        <div id = "trail"></div>
+        <div class="header">
+            <h1>Bret Jones</h1>
+            <h2>I code things. Check out <a href="https://juggling.uga.edu">my website</a> that I made for the juggling club.</h2>
+            <h2 class="greeting">Default</h2>
+            <p>I already make websites. I also do circus stuff. Check out <a href="https://juggling.uga.edu">this website</a> and give me feedback please.
+            I would appreciate it. Thanks.</p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <img src="images/profile.jpg" alt="This is a picture of me and it is clearly a headshot please don't hurt me for this of all things">
+                <div id="memap" class="map"></div>
+            </div>
+            <div class="details">
+                <div class="twolist">
+                    <div class="column">
+                        <h3>My Languages</h3>
+                        <ul>
+                            <li>Java</li>
+                            <li>Javascript</li>
+                            <li>Python</li>
+                            <li>C</li>
+                            <li>C++</li>
+                            <li>C#</li>
+                            <li>HTML/CSS</li>
+                            <li>TI Basic (the best one)</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3>Other Skills</h3>
+                        <ul>
+                            <li>Tracking you</li>
+                            <li>Following you</li>
+                            <li>Running fast</li>
+                            <li>Hunting</li>
+                            <li>Night Vision</li>
+                            <li>Heat Vision</li>
+                            <li>I smell like lavender</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr style="border-top: 1px dotted blue">
+                <h3>Leadership and Experience</h3>
+                <dl>
+                    <dt>2022-2023</dt>
+                    <dd><a href="https://juggling.uga.edu">Juggling Club VP</a></dd>
+                    <dt>2024-2060</dt>
+                    <dd>CEO of Google</dd>
+                </dl>
+                <hr style="border-top: 1px dashed blue">
+                <h3>Skills</h3>
+                <dl>
+                    <dt>Unicycling</dt>
+                    <dd>&#11088 &#11088 &#11088 &#11088 &#11088</dd>
+                    <dt>Juggling</dt>
+                    <dd>&#11088 &#11088 &#11088 &#11088 &#11088</dd>
+                    <dt>Counting to 5</dt>
+                    <dd>&#11088 &#11088 &#11088 &#11088 &#11088 &#11088 &#11088 &#11088</dd>
+                </dl>
+            </div>
+            <div class="card">
+                <video autoplay="true" id="videoElement" style="height: 300px"></video>
+                <div id="usrmap" class="map"></div>
+            </div>
+        </div>
+        <div class="required">
+            <p>Welcome to my monster of a website. I hope you enjoy it. It isn't the same if you don't accept everything.</p>
+            <p>Feel free to click on all the links. Here are some you should actually check out. Like, they are actually decent websites.</p>
+            <ul>
+                <li><a href="https://iceman013.github.io/startup/">Startup page</a></li>
+                <li><a href="https://juggling.uga.edu">Juggling club page</a></li>
+            </ul>
+            <p style="color: rebeccapurple">But hey. I gotta change some text color so I'll do that here.</p>
+            <p class="showoff">Is this fancy enough for you?</p>
+        </div>
+        <div class="footer">
+            <button onclick="open(contact.html)">Get in Touch</button>
+            <h3><a href="contact.html">Get in Touch</a></h3>
+            <hr>
+            <p>&#169 Bret Jones even though this isn't copyrighted and thus makes no sense legally.</p>
+        </div>
+        <div class="other">
+            <div id = "trail"></div>
+            <img src="images/closeup.jpg" class="scare" id="jump">
+        </div>
     </body>
     <footer>
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+        <script src = "shenan.js" type = "text/javascript"></script>
+        <script src = "map.js" type = "text/javascript"></script>
         <script src = "main.js" type = "text/javascript"></script>
     </footer>
 </html>
