@@ -56,7 +56,7 @@ function makeMap(usercoords) {
 
         jdone++;
         if (jdone <= jumps) {
-            setTimeout(moveMe, 1);
+            setTimeout(moveMe, 10);
         } else {
             triggerShenanigans();
         }
