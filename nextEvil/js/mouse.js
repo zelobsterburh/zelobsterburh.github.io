@@ -3,7 +3,7 @@ var usery;
 var fakex;
 var fakey;
 var target = {clientX: 0, clientY: 0, active: false};
-var SPEED = 1.5;
+var SPEED = 3;
 
 function updateUserPosition(event) {
     userx = event.clientX;
@@ -70,7 +70,11 @@ function beginTheFun() {
     setInterval(updateMouse, 1);
     var newMouse = document.createElement("img");
     newMouse.classList.add("newMouse");
-    newMouse.src = "images/cursor.png";
+    if (navigator.platform.toUpperCase().includes("WIN")) {
+        newMouse.src = "images/winCursor.png";
+    } else {
+        newMouse.src = "images/macCursor.png";
+    }
     newMouse.id = "newMouse";
     document.body.appendChild(newMouse);
     
