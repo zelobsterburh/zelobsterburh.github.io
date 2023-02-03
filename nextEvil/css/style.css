@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    cursor: inherit;
+}
+body {
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+    height: 100vh;
+}
+.newMouse {
+    position: fixed;
+    height: 16px;
+}
+hr {
+    margin-top: 100px;
+}
