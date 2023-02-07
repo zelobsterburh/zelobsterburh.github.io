@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+.buttonGrid {
+    display: grid;
+    grid-template-columns: repeat(30, 40px);
+    grid-template-rows: repeat(15, 40px);
+
+    cursor: cell;
+}
+button {
+    cursor: inherit;
+    border: none;
+    background-color: #000000;
+    transition: 0.2s;
+}
+button:hover {
+    transition: 0.2s;
+    transform: translate(5px, -5px);
+}
+button:active {
+    transition: 0.2s;
+    transform: translate(-2px, 2px);
+}
