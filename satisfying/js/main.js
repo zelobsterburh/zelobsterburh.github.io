@@ -1,6 +1,6 @@
 const WIDTH = 30;
 const HEIGHT = 15;
-const DISPERSE = 1;
+const DISPERSE = 10;
 function buttonId(x, y) {
     return "b(" + x + "," + y + ")";
 }
@@ -28,7 +28,7 @@ function getRadius(r, value) {
 function wave(base) {
     var x = buttonGetX(base.id);
     var y = buttonGetY(base.id);
-    var targets = getRadius(3, base.value);
+    var targets = getRadius(1.5, base.value);
     for (let i = 0; i < targets.length; i++) {
         targets[i][0] += x;
         targets[i][1] += y;
@@ -57,7 +57,7 @@ function spread(id) {
     }, DISPERSE);
     setTimeout(function() {
         meItem.style.backgroundColor = "#000000";
-    }, 100*DISPERSE);
+    }, 10*DISPERSE);
     setTimeout(function() {
         meItem.value = 0;
     }, 100*DISPERSE);
