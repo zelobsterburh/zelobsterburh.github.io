@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    font-family: "Alata";
+}
+body {
+    margin: 0px;
+    padding: 10px;
+}
+
+#siteList {
+    display: block;
+}
+#siteList a {
+    margin: 5px;
+    margin-left: 20px;
+    display: list-item;
+}
