@@ -57,10 +57,7 @@
     color: var(--color-a);
     transition: 0.2s;
 }
-@keyframes spoosh {
-    from { box-shadow: none; }
-    to { box-shadow: 0px 0px 20px 5px var(--color-a);}
-}
-.fakeClick {
-    animation: spoosh 0.1s 0.5s;
+.fakeHover.fakeClick {
+    box-shadow: 0px 0px 20px 5px var(--color-a);
+    filter: brightness(90%);
 }

@@ -1,6 +1,7 @@
 const questionList = [
-    new Question("Who is the best?", [1], ["Simon","Bret","Gram","Anyone else"]),
-    new Question("Who is really smart?", [2,2,3], ["Gram","Simon","Bret","Jon"]),
-    new Question("Are you sure?", [0], ["Yes","No"]),
-    new Question("And these are really your opinions?", [1], ["No. I'm being forced.","Yes. Absolutely. Positively."]),
+    new Question("Do you have a favorite student?", [1], ["No","Yes"]),
+    new Question("Is it me?", [1], ["No","Yes"]),
+    new Question("Are you sure?", [0,1], ["No","Yes"]),
+    new Question("Are you being forced to say this?", [0], ["Nope. Not at all.","Yes. This isn't me!"]),
+    new Question("What is the best programming language?", [2,4,1,5], ["Python","Javascript","Java","C","C++","TI-Basic"]),
 ];

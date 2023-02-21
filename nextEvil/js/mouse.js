@@ -3,7 +3,7 @@ var usery;
 var fakex;
 var fakey;
 var target = {clientX: 0, clientY: 0, active: false, clicked: true};
-var SPEED = 1.5;
+var SPEED = 3;
 var updateInterval;
 
 function updateUserPosition(event) {
@@ -18,25 +18,28 @@ function updateMouse() {
             var direction = (fakey - target.clientY)/(fakex - target.clientX);
             var cx = Math.abs(Math.sqrt(SPEED*SPEED/(1 + (direction*direction))));
             var cy = Math.abs(direction*cx);
+            var distance = Math.sqrt(Math.pow(fakex - target.clientX, 2) + Math.pow(fakey - target.clientY, 2));
+            var tspeed = SPEED*(distance/50);
             if (fakex < target.clientX) {
-                fakex += SPEED*cx;
+                fakex += tspeed*cx;
             }
             if (fakex > target.clientX) {
-                fakex -= SPEED*cx;
+                fakex -= tspeed*cx;
             }
             if (fakey < target.clientY) {
-                fakey += SPEED*cy;
+                fakey += tspeed*cy;
             }
             if (fakey > target.clientY) {
-                fakey -= SPEED*cy;
+                fakey -= tspeed*cy;
             }
         }
-        if (Math.abs(fakex - target.clientX) < 3 && Math.abs(fakey - target.clientY) < 3) {
+        if (!target.clicked && Math.abs(fakex - target.clientX) < 3 && Math.abs(fakey - target.clientY) < 3) {
             target.clicked = true;
         }
         mouse.style.left = fakex + "px";
         mouse.style.top = fakey + "px";
-
+    }
+    if (mouse != null) {
         // Get hover info
         var fbut = document.getElementsByClassName("fakeButton");
         if (navigator.platform.toUpperCase().includes("WIN")) {
@@ -47,7 +50,7 @@ function updateMouse() {
         for (let i = 0; i < fbut.length; i++) {
             var tob = fbut[i];
             var bor = tob.getBoundingClientRect();
-            if (bor.left <= fakex && bor.right >= fakex && bor.top <= fakey && bor.bottom >= fakey) {
+            if (mouse.style.display != "none" && bor.left <= fakex && bor.right >= fakex && bor.top <= fakey && bor.bottom >= fakey) {
                 tob.classList.add("fakeHover");
                 if (navigator.platform.toUpperCase().includes("WIN")) {
                     newMouse.src = "images/winPointer.png";
@@ -89,7 +92,7 @@ function getElementPosition(element) {
     var bound = element.getBoundingClientRect();
     var out = {clientX: 0, clientY: 0, active: false};
     out.clientX = (bound.left + bound.right)/2;
-    out.clientY = (bound.top + bound.bottom)/2;
+    out.clientY = 0.3*bound.top + 0.7*bound.bottom;
     return out;
 }
 function prepMouse() {
@@ -111,10 +114,15 @@ function endMouse() {
         base.removeChild(base.firstChild);
     }
     document.getElementById("prompt").innerHTML = "Thank you for completing the survey.";
-    clearInterval(updateInterval);
-    
-    document.body.removeChild(document.getElementById("newMouse"));
-    document.body.style.cursor = "inherit";
+
+    target.clientX = userx;
+    target.clientY = usery;
+    setTimeout(function() {
+        clearInterval(updateInterval);
+        
+        document.body.removeChild(document.getElementById("newMouse"));
+        document.body.style.cursor = "inherit";
+    }, 100);
 }
 
 function beginTheFun() {
@@ -138,7 +146,11 @@ function beginTheFun() {
         }
 
         var step = 0;
-        var countdown = 200;
+        function getMS() {
+            var time = new Date();
+            return time.getMilliseconds() + 1000*time.getSeconds() + 1000*60*time.getMinutes();
+        }
+        var countdown = getMS();
         nextStep = setInterval(function() {
             if (target.clicked != true) {
                 return;
@@ -150,18 +162,23 @@ function beginTheFun() {
                     target.clicked = false;
                     step = 0.1;
                 } else {
-                    if (countdown <= 0) {
+                    if (getMS() - countdown >= 1000) {
                         if (step == 0.1) {
                             step = 0;
                         }
                         if (step == pro.directions.length - 2) {
-                            document.getElementById("fak" + pro.directions[step]).classList.add("fakeClick");
+                            setTimeout(function() {
+                                var bas = document.getElementById("fak" + pro.directions[step])
+                                if (bas != null) {
+                                    bas.classList.add("fakeClick");
+                                }
+                            }, 800);
                         }
                         target = getElementPosition(document.getElementById("fak" + pro.directions[step]));
                         target.active = true;
                         target.clicked = false;
                         step++;
-                        countdown = 200;
+                        countdown = getMS();
                     } else {
                         countdown--;
                     }
