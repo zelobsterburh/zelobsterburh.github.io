@@ -7,22 +7,39 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#11B5E4">
-        <meta property="og:site_name" content="CV Project Thingy">
-        <meta name="description" content="This is assignment 1 and I hope you see this.">
+        <meta property="og:site_name" content="Website Creation Abomonation">
+        <meta name="description" content="I have too much free time.">
         <meta property="og:image" content="images/me.jpg">
 
         <link rel="icon" type="image/x-icon" href="images/me.jpg">
 
         <link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
 
-        <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mouseStyle.css"/>
     </head>
     <body>
-        <button onclick="beginTheFun()">Click me</button>
-        <hr><hr><hr>
-        <button id="target">Move to me</button>
+        <div class="heading">
+            <h1>This page</h1>
+            <p>There is content here</p>
+        </div>
+        <div class="mouseMoverSection">
+            <h1>Quick Questions</h1>
+            <p id="prompt">Press the button below to begin</p>
+            <div id="buttonBox">
+                <button onclick="beginTheFun()">Start</button>
+            </div>
+            <p id="delay"></p>
+        </div>
+        <div>
+            <h1>More content</h1>
+            <p>Look. Ooh. Aah.</p>
+        </div>
     </body>
     <footer>
-        <script src = "js/mouse.js" type = "text/javascript"></script>
+        <script src="js/question.js" type="text/javascript"></script>
+        <script src="js/questionList.js" type="text/javascript"></script>
+
+        <script src="js/mouse.js" type="text/javascript"></script>
     </footer>
 </html>
