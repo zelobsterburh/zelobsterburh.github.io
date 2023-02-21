@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  min-width: 250px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+/* Style the list items */
+ul li {
+  color: darkslategrey;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: lightblue;
+  font-size: 18px;
+}
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* Style the divs */
+#div_list {
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+  background-color: lightblue; 
+  height: 120px;
+}
+#div_greet {
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+  background-color:cadetblue; 
+  height: 150px;
+}
+#div_color {
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+  height: 150px;
+}
+/* background color classes for part 2 - switch the background color */
+.bg_grey {
+    background-color:#a3a3a3;
+}
+.bg_red {
+    background-color: #EB5353;
+}
+.bg_yellow {
+    background-color: #F9D923;
+}
+.bg_green {
+    background-color: #36AE7C;
+}
+.bg_blue {
+    background-color: #187498;
+}
+#myUL li {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 3px 20% 8px 25%;
+  align-items: end;
+  margin: 0 auto;
+}
+/* input box for part 3 - dynamic list */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Style the buttons */
+button {
+  padding: 10px;
+  width: 100px;
+  background: #d9d9d9;
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 0;
+  border: 0;
+}
+
+.btn:hover {
+  background-color: #bbb;
+}
