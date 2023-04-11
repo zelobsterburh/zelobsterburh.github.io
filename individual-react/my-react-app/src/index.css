@@ -1,0 +1,26 @@
+* {
+    font-family: "Alata";
+}
+.List {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+img {
+    object-fit: cover;
+    object-position: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+.Card {
+    background-color: #112233;
+    display: flex;
+    padding: 10px;
+    color: #ddeeff;
+    margin: 10px;
+    border-radius: 10px;
+}
+.Card h2 {
+    margin-left: 10px;
+}
